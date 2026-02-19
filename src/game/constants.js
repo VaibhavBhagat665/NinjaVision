@@ -3,7 +3,7 @@
 export const GRAVITY = 0.15; // Very low gravity (underwater feel)
 export const SPAWN_INTERVAL_MIN = 1200;   // ms
 export const SPAWN_INTERVAL_MAX = 2500;  // ms
-export const FRUIT_RADIUS = 40;
+export const FRUIT_RADIUS = 60; // Increased from 40 for laptop visibility
 export const FRUIT_LAUNCH_VY_MIN = -9; // Very slow rise
 export const FRUIT_LAUNCH_VY_MAX = -13;
 export const FRUIT_LAUNCH_VX_RANGE = 1.5; // Very narrow random spread (we will override this with center logic)
@@ -36,35 +36,35 @@ export const FRUIT_TYPES = [
     color: 0x2d7d3a,
     innerColor: 0xe74c3c,
     particleColor: 0xe74c3c,
-    radius: 45,
+    radius: 70, // Was 45
   },
   {
     name: 'orange',
     color: 0xf39c12,
     innerColor: 0xf5b041,
     particleColor: 0xf39c12,
-    radius: 38,
+    radius: 60, // Was 38
   },
   {
     name: 'coconut',
     color: 0x7b5b3a,
     innerColor: 0xfdfefe,
     particleColor: 0xfdfefe,
-    radius: 36,
+    radius: 55, // Was 36
   },
   {
     name: 'mango',
     color: 0xf1c40f,
     innerColor: 0xf9e154,
     particleColor: 0xf1c40f,
-    radius: 40,
+    radius: 60, // Was 40
   },
   {
     name: 'grape',
     color: 0x8e44ad,
     innerColor: 0xbb8fce,
     particleColor: 0x8e44ad,
-    radius: 32,
+    radius: 50, // Was 32
   },
 ];
 

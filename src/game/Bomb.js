@@ -9,7 +9,7 @@ export default class Bomb {
         this.stage = stage;
         this.screenWidth = screenWidth;
         this.screenHeight = screenHeight;
-        this.radius = 38;
+        this.radius = 60; // Increased from 38
         this.isBomb = true;
 
         // Spawn position
