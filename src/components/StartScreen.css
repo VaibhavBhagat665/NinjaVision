@@ -1,0 +1,227 @@
+.start-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, #0a0a1a 0%, #000000 70%);
+  z-index: 100;
+  overflow: hidden;
+}
+
+/* Floating background orbs */
+.start-bg-orbs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: float 6s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 300px;
+  height: 300px;
+  background: rgba(0, 255, 255, 0.12);
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 250px;
+  height: 250px;
+  background: rgba(231, 76, 60, 0.1);
+  bottom: 20%;
+  right: 10%;
+  animation-delay: -2s;
+}
+
+.orb-3 {
+  width: 200px;
+  height: 200px;
+  background: rgba(243, 156, 18, 0.1);
+  top: 50%;
+  left: 60%;
+  animation-delay: -4s;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+
+  50% {
+    transform: translateY(-30px) scale(1.1);
+  }
+}
+
+.start-content {
+  text-align: center;
+  z-index: 1;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo-container {
+  margin-bottom: 40px;
+}
+
+.game-title {
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 900;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -2px;
+}
+
+.title-ninja {
+  display: block;
+  color: #fff;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.title-vision {
+  display: block;
+  background: linear-gradient(135deg, #00ffff, #00c8ff, #0088ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.4));
+}
+
+.title-slash {
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00ffff, transparent);
+  margin: 10px auto;
+  animation: slashGlow 2s ease-in-out infinite;
+}
+
+@keyframes slashGlow {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    width: 100px;
+  }
+
+  50% {
+    opacity: 1;
+    width: 150px;
+  }
+}
+
+.game-subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.1rem;
+  margin-top: 12px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.start-instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.instruction-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1rem;
+}
+
+.instruction-icon {
+  font-size: 1.4rem;
+}
+
+/* Start button */
+.start-button {
+  position: relative;
+  padding: 18px 60px;
+  background: linear-gradient(135deg, #00c8ff, #0088ff);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.start-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(0, 200, 255, 0.5);
+}
+
+.start-button:active {
+  transform: scale(0.98);
+}
+
+.btn-text {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.btn-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #00ffff, #0088ff, #00ffff);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 0;
+  filter: blur(8px);
+}
+
+.start-button:hover .btn-glow {
+  opacity: 0.6;
+}
+
+.start-warning {
+  margin-top: 24px;
+  color: rgba(231, 76, 60, 0.7);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .game-title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .start-button {
+    padding: 15px 45px;
+  }
+
+  .btn-text {
+    font-size: 1rem;
+  }
+}
